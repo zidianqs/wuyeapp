@@ -1,0 +1,102 @@
+<!--
+<div class="erwei" title="微信扫一扫">
+	<span class="hudongzhushou">官方微信</span>
+	<div class="erwei_big" style="display:none;">
+		<p>扫一扫，关注{weixin::C('site_name')}官方微信，体验{weixin::C('site_name')}智能服务<br>
+		<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={weixin::C('site_qq')}&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:{weixin::C('site_qq')}:51" alt="点击这里给我发消息" title="点击这里给我发消息"/></a></p>
+	</div>
+</div>
+-->
+<script type="text/javascript">
+	$(document).ready(function(){
+		var erwei_time = null;
+		$(".erwei").hover(function(){
+			$(".erwei_big").show();
+		}).mouseleave(function(){
+				erwei_time = setTimeout(function(){
+					$(".erwei_big").hide();
+				},1000);
+			});
+		$(".erwei_big").mouseenter(function(){
+			if(erwei_time){
+				clearTimeout(erwei_time);
+			}
+		}).mouseleave(function(){
+				erwei_time = setTimeout(function(){
+					$(".erwei_big").hide();
+				},1000);
+			});
+	});
+</script>
+<!--QQ咨询-->
+<script charset="utf-8" type="text/javascript" src="{weixin::RES}/js/wpa.js"></script>
+<link rel="stylesheet" type="text/css" href="{weixin::RES}/css/qqserver.css"/>
+<!--
+<div id="onlinebox" class="onlinebox onlinebox_1 onlinebox_1_2" style="position: fixed; top: 80px; right:35px; ">
+	<div class="onlinebox-showbox" id="onlinebox-showbox" onMouseMove="qq(0)"><span>在<br>线<br>客<br>服<br></span></div>
+	<div class="onlinebox-conbox" id="onlinebox-conbox" style="position: absolute; left: -94px; width: 118px; display:none;">
+		<div class="onlinebox-top" id="onlinebox-top" title="点击可隐藏" onClick="qq(1)"><span>在线客服</span></div>
+		<div class="onlinebox-center">
+			<div class="onlinebox-center-box">
+				<dl>
+					<dt>使用帮助</dt>
+						<dd><a href="tencent://message/?uin={weixin::C('site_qq')}&amp;Site=&amp;Menu=yes" title="QQ咨询服务">
+						<img border="0" src="http://wpa.qq.com/pa?p=2:{weixin::C('site_qq')}:41"></a>
+						</dd>
+					</dl>
+				<div class="clear"></div>
+				<dl>
+					<dt>技术询问</dt>
+					<dd>
+						<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={weixin::C('site_qq')}&site=qq&menu=yes">
+							<img border="0" src="http://wpa.qq.com/pa?p=2:{weixin::C('site_qq')}:41" alt="在线咨询服务"/>
+						</a>
+					</dd>
+				</dl>
+				<div class="clear"></div>
+				<dl><dt>合作加盟</dt>
+				<dd>
+					<a href="tencent://message/?uin={weixin::C('site_qq')}&amp;Site=&amp;Menu=yes" title="QQ合作加盟">
+						<img border="0" src="http://wpa.qq.com/pa?p=2:{weixin::C('site_qq')}:41">
+					</a>
+				</dd>
+				</dl>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="onlinebox-bottom">
+			<div class="onlinebox-bottom-box">
+				<div class="online-tbox">
+					<div style="text-align: center; "><strong>在线时间</strong><br>	08:30-22:30<br>
+						<span style="color:#999;">—————————</span><br>
+						<span style="font-weight: bold; ">服务热线<br>4000-000-000
+							<span style="font-weight: normal; "><br></span>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="onlinebox-bottom-bg"></div>
+	</div>
+</div>
+-->
+<div class="footer">
+	<div class="footer-content clearfix">
+		<div class="foot-menu">
+			
+			<p>客服QQ：{weixin::C('site_qq')}&nbsp;&nbsp;&nbsp;邮箱：{weixin::C('site_email')}</p>
+		</div>
+		<div class="copyright">{weixin::C('copyright')}</div>
+	</div>
+</div>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?0c4cb6bcf303d9e3aa5f09266df04f30";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

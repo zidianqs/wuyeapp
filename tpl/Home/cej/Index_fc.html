@@ -1,0 +1,248 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>{weixin::C('site_name')}——{weixin::C('site_title')}</title>
+<meta name="keywords" content="{weixin::C('keyword')}"/>
+<meta name="description" content="{weixin::C('content')}"/>
+<script src="{weixin::RES}/js/html5.js"></script>
+<link rel="stylesheet" type="text/css" href="{weixin::RES}/css/index.css" media="all" />
+<script type="text/javascript" src="{weixin::RES}/js/jQuery.js"></script>
+<script type="text/javascript" src="{weixin::RES}/js/weimob-index.js"></script>
+<link rel="shortcut icon" href="{weixin::RES}/images/favicon.ico" />
+</head>
+<body>
+<div class="nav clearfix">
+	<div class="nav-content">
+		<h1 class="left" href="/">{weixin::C('site_name')}</h1>
+		<div class="left city" style="padding-left:20px;">
+			<h2>全国</h2>
+							<a href="#">
+					切换城市<i class="tri4"></i>
+				</a>
+					</div>
+		<div class="right line-li">
+			<ul>
+				<li><a href="/">首页</a></li>
+                <li><a href="{weixin::U('Home/Index/fc')}" class="hover">功能介绍</a></li>
+                <!--<li><a href="{weixin::U('Home/Index/common')}">客户案例</a></li>-->
+                <li><a href="{weixin::U('Home/Index/coop')}">诚邀合作</a></li>
+                <li><a href="{weixin::U('Home/Index/about')}">关于我们</a></li>
+				<if condition="$_SESSION[uid]==false">
+				<li><a href="{weixin::U('Index/login')}">登录后台</a></li>
+				<!--<li><a href="{weixin::U('Index/reg')}">申请试用</a></li>-->
+					<else/>
+                <li><a href="{weixin::U('User/Index/index')}">管理中心</a></li>
+				<li><a href="/#" onClick="Javascript:window.open('{weixin::U('System/Admin/logout')}','_blank')" >退出</a></li>
+				</if>	
+                <li <eq name="ACTION_NAME" value="help">class="menuon"</eq>><a href="{weixin::U('Home/Index/help')}">帮助中心</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="Public-content clearfix">
+	<div class="Public">
+		<h1 class="Public-h1">功能介绍</h1>
+		<div class="Public-box clearfix">
+			<ul id="nav_lis" class="case-nav left">
+				<li data-index="0"  data-hash="#site">微官网</li>
+				<li data-index="1" data-hash="#wuye">微物业</li>
+				<li data-index="2" data-hash="#activities">微活动</li>
+				<li data-index="3" data-hash="#push">微传播</li>
+				<li data-index="4" data-hash="#reser">微预约</li>
+				<li data-index="5" data-hash="#message">微留言</li>
+				<li data-index="6" data-hash="#photo">微相册</li>
+				<li data-index="7" data-hash="#xiaoqu">微小区</li>
+				<li data-index="8" data-hash="#research">微调研</li>
+				<li data-index="9" data-hash="#addup">微统计</li>
+			</ul>
+			<div id="nav_uls">
+				<div data-index="0" data-on class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">微官网:帮助客户快速建立精美的微信3G网站，接轨移动互联网时代。</h2>
+						<p class="guideimg"><img src="{weixin::RES}/images/weimob1.jpg" /></p>
+						<p class="guidep">{weixin::C('site_name')}全国首创微信3G网站，用户只要通过简单的设置，就能快速生成属于您自己的微信3G网站，并且有各种精美模板，可供选择，还有自定义模版，可以设计出自己的风格，让您的粉丝有种惊艳的感觉。在{weixin::C('site_name')}官方微信号输入"首页"体验微信3G网站。</p>
+					</div>
+				</div>
+				<div data-index="1" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">微物业:帮助物业公司提升服务品质。</h2>
+						<p class="guideimg"><img src="{weixin::RES}/images/weimob2.jpg" /></p>
+						<p class="guidep">帮助物业公司快速在微信上实现客户管理、报修管理、费用收缴、消息推送等功能，提高服务效率，提升服务品质。</p>
+					</div>
+				</div>
+				<div data-index="2" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">微活动：组织社区活动、节日庆典、蔬果特卖的微平台。</h2>
+						<p  class="guideimg"><img src="{weixin::RES}/images/weimob3.jpg" /></p>
+						<p  class="guidep">组织社区活动、节日庆典、蔬果特卖的微平台，为社区业主提供良好生活体验的同时，为物业公司增加商业收益。</p>
+					</div>
+				</div>
+				<div data-index="3" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">微传播:让业主及时获悉小区动态，优化业主与物业公司的互动模式。</h2>
+						<p  class="guideimg"><img src="{weixin::RES}/images/weimob4.jpg" /></p>
+						<p  class="guidep">让业主及时获悉小区动态，优化业主与物业公司的互动模式。基于微信平台为业主第一时间推送图文信息、语音视频等社区资讯的物业传播解决方案。</p>
+					</div>
+				</div>
+				<div data-index="4" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">微预约:供社区业主实现在线预约服务</h2>
+						<p class="guideimg"><img src="{weixin::RES}/images/weimob5.jpg" /></p>
+						<p class="guidep">微预约是供社区业主实现在线预约服务的一个模块，操作简单、响应速度快，给社区业主办事、消费带来极大便利。</p>
+					</div>
+				</div>
+				<div data-index="5" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">微留言:用户的互动交流利器</h2>
+						<p class="guideimg"><img src="{weixin::RES}/images/weimob6.jpg" /></p>
+						<p class="guidep">微留言可以让用户对商家的服务进行评论。同时，留言可以被分享于用户的朋友圈、微博及发送给好友，达到社会化营销的效果。</p>
+					</div>
+				</div>
+				<div data-index="6" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">微相册:照片展现，一览无余</h2>
+						<p class="guideimg"><img src="{weixin::RES}/images/weimob7.jpg" /></p>
+						<p class="guidep">基于微信平台为用户提供图片存储和展示服务，轻松创建相册，便捷展示美图。</p>
+					</div>
+				</div>
+				<div data-index="7" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">微小区:与实体小区对应的线上小区交流平台，供物业公司、业主发布资讯，分享交流生活信息。</h2>
+						<p class="guideimg"><img src="{weixin::RES}/images/weimob8.jpg" /></p>
+						<p class="guidep">与实体小区对应的线上小区交流平台，供物业公司、业主发布资讯，分享交流生活信息。</p>
+					</div>
+				</div>
+				<div data-index="8" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">微调研：实时统计，为市场调研添加一份有力数据</h2>
+						<p class="guideimg"><img src="{weixin::RES}/images/weimob9.jpg" /></p>
+						<p class="guidep">微调研是一种基于微信平台设置的、以问卷形式展现的新型在线调研应用工具。</p>
+					</div>
+				</div>
+				<div data-index="9" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">微统计:实时数据统计，监控运营效果</h2>
+						<p class="guideimg"><img src="{weixin::RES}/images/weimob10.jpg" /></p>
+						<p class="guidep">实时统计微信公众号的粉丝关注情况和用户语音请求数，帮助客户根据统计对相关营销活动效果及某些敏感因素进行分析判断，并对市场进行有效监控和应对。</p>
+					</div>
+				</div>
+				<div data-index="10" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">微房产:360度全景看房</h2>
+						<p class="guideimg"><img src="{weixin::RES}/images/weimob11.jpg" /></p>
+						<p class="guidep">微房产是利用{weixin::C('site_name')}平台打造的一款全新超炫酷的房产官方网站，其功能非常强大，包含了楼盘介绍、子楼盘管理、户型介绍及户型图、楼盘相册、房友印象以及专家点评等功能，更有360度全景看房超强大功能震撼登场！花几分钟时间即可打造微房产官网。</p>
+					</div>
+				</div>
+				<div data-index="11" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">微汽车：预约试驾、预约保养、360度看车、车主关怀应有尽有！</h2>
+						<p class="guideimg"><img src="{weixin::RES}/images/weimob12.jpg" /></p>
+						<p class="guidep">微汽车采用{weixin::C('site_name')}平台进行汽车的销售管理、预约保养、预约试驾、保险计算、车贷计算、车型比较、违章查询、360度全景看车、车主关怀等功能，整个过程非常便捷，省时省力省心，并通过与{weixin::C('site_name')}平台有交互能力的手机客户端，快速便捷的实现了商家的销售管理与预约过程，同时也实现了客户无需进入4s店就能进行预约保养和试驾的功能。</p>
+					</div>
+				</div>
+				<div data-index="12" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">微喜帖：颠覆传统方式，让庆典更时尚环保</h2>
+						<p class="guideimg"><img src="{weixin::RES}/images/weimob13.jpg" /></p>
+						<p class="guidep">微喜帖是针对结婚庆典而推出的一款行业产品，主要是为计划结婚的用户们，通过使用微喜帖应用来向亲朋好友传播自己即将结婚的动态，可以展现用户想要表达的话、结婚日期、地址、导航、接待电话，同时亲朋好友可以在微喜帖平台上提交赴宴通知、送上祝福，并且转发喜帖。</p>
+					</div>
+				</div>
+				<div data-index="13" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">微医疗：互联网时代的医疗小助手</h2>
+						<p class="guideimg"><img src="{weixin::RES}/images/weimob14.jpg" /></p>
+						<p class="guidep">用户可通过{weixin::C('site_name')}平台实现在线挂号、内容设置、预约查询、预约统计的一整套服务体系，能够有效解决患者挂号难、排队累、就医不方便等一系列难题</p>
+					</div>
+				</div>
+				<div data-index="14" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2  class="guideh2">微酒店：一键点击，轻松订房</h2>
+						<p class="guideimg"><img src="{weixin::RES}/images/weimob15.jpg" /></p>
+						<p class="guidep">1、消息管理：包含自动消息回复和功能性消息编辑功能，优化对用户的消息服务，提升用户体验。</p>
+						<p class="guidep">2、门店管理：即对门店详情页面显示内容进行管理，且用户可直接一键导航或一键拨号。</p>
+						<p class="guidep">3、用户管理：用户信息管理模块，给每个用户打上各种标签，为精准营销提供服务。</p>
+						<p class="guidep">4、数据统计：各式各样的数据为后期运营提供重要帮助。</p>
+						<p class="guidep">5、提供服务：用户直接可在公众账号进行预约房间、预约餐厅等操作。</p>
+					</div>
+				</div>
+                <div data-index="15" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">LBS回复:LBS范围内精准的商家地理位置回复</h2>
+							<p class="guideimg"><img src="{weixin::RES}/images/weimob16.jpg" /></p>
+						<p class="guidep">LBS图文回复是由商家设置店铺位置，用户提交当前所在位置后，可以找到最近的商家店铺，并进行一键导航、一键拨号，如果店铺当前有进行的活动（如：优惠券、刮刮卡），也可把活动显示出来。</p>
+					</div>
+				</div>
+				<div data-index="16" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">微餐饮——实时数据统计，监控运营效果</h2>
+					
+                        <p class="guideimg"><img src="{weixin::RES}/images/weimob17.jpg" /></p>
+						<p class="guidep">{weixin::C('site_name')}后台可以实时统计微信公众号的粉丝关注情况和用户语音请求数，根据统计对相关推广营销活动效果及某些敏感因素对您的影响作出判断，并对相关市场行为作出相应调整，从一定程度上实现了对市场的监控与及时应对。</p>
+					</div>
+				</div>
+				<div data-index="17" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">微商城：打造微信移动电商</h2>
+						
+                        <p class="guideimg"><img src="{weixin::RES}/images/weimob18.jpg" /></p>
+						<p class="guidep">“微商城”是一款基于移动互联网的商城应用服务产品，以时下最热门的互动应用微信为媒介，配合微信5.0微信支付功能，实现商家与客户的在线互动，即时推送最新商品信息给微信用户，实现微信在线的购物功能。
+							其主要功能包括：支持商品管理、支持会员管理、支持购物车、支持商品分类管理、支持订单管理、支持店铺设置、支持支付方式管理、支持配送方式管理。</p>
+					</div>
+				</div>
+				
+                <div data-index="18" class="weimob_guide right">
+					<div class="wm_case_list">
+						<h2 class="guideh2">微预约：在线预约，{weixin::C('site_name')}帮您一键搞定</h2>
+						<p class="guideimg"><img src="{weixin::RES}/images/weimob19.jpg" /></p>
+						<p class="guidep">微预约是商家利用{weixin::C('site_name')}平台实现在线预约的一种服务，可以运用于汽车、房产、酒店、医疗、餐饮等一系列行业，给用户的出行办事、购物、消费带来了极大的便利！且操作简单，响应速度非常快，受到业界的一致好评！</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+		$(document).ready(function(){
+		var hash=window.location.hash || "#site";
+		if(hash){
+			var lis=$("#nav_lis>li"),
+				divs=$("#nav_uls>div");
+			lis.each(function(index, v) {
+				if(hash == v.getAttribute("data-hash")){
+					v.className="hover";
+					//.var divs = $("#nav_uls>div");
+					for(var i=0,ci; ci = divs[i]; i++){
+						if(index == ci.getAttribute("data-index")){
+							$(ci).addClass("show");
+						}else{
+							$(ci).removeClass("show");
+						}
+					}
+			
+				}
+			});
+		}
+
+
+	$("#nav_lis").on("mouseover", function(e){
+			$(this).find("li").removeClass("hover");
+			e.target.className = "hover";
+			var index = e.target.getAttribute("data-index");
+			//
+			var divs = $("#nav_uls>div");
+			for(var i=0,ci; ci = divs[i]; i++){
+				if(index == ci.getAttribute("data-index")){
+					$(ci).addClass("show");
+				}else{
+					$(ci).removeClass("show");
+				}
+			}
+
+		});
+
+
+	});
+</script>
+<include file="Public:footer"/>

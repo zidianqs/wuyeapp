@@ -1,0 +1,59 @@
+<include file="Public:head"/>
+<link rel="stylesheet" type="text/css" href="{weixin::STATICS}/default_user_com.css" media="all">
+ <div class="content" style="width:920px; background:none; margin-left:275px; border:none; margin-bottom:30px;" >
+
+          <div class="cLineB">
+              <h4 class="left">定制开发管理</h4>
+          </div>
+          
+          <div class="cLine">
+    <div class="alert">
+    <p><span class="bold">使用方法：</span>请添加定制开发</p>
+    </div>
+</div>
+          
+          <div class="cLine">
+            <div class="pageNavigator left">
+                <a href="{weixin::U('Reservation/addDingzhi',array('token'=>$token))}" class="btnGrayS vm bigbtn">
+                    <img src="tpl/User/default/common/images/pic.png" class="vm">添加定制
+                </a>
+            </div>
+            <div class="clr"></div>
+          </div>
+          <div class="msgWrap">
+          <form method="post" action="" id="info">
+          <input name="delall" type="hidden" value="del">
+           <input name="wxid" type="hidden" value="gh_423dwjkewad">
+            <table class="ListProduct" border="0" cellspacing="0" cellpadding="0" width="100%">
+              <thead>
+					<tr> 
+					   <th>定制开发名称</th>
+							<th>关键字</th>
+							<th>定制电话</th>
+							<th>操作</th>
+					</tr>
+				</thead>
+				  <tbody>
+					<volist name="reslist" id="vo">
+						 <tr> 
+							<td>{weixin:$vo['title']}</td>
+							<td>{weixin:$vo['keyword']}</td>
+							<td>{weixin:$vo['tel']}</td>
+						   <td > 
+								<a href="{weixin::U('Reservation/manageDingzhi',array('token'=>$vo['token'],'id'=>$vo['id']))}" class="btn" title="预定管理">预定管理</a>
+								<a class="btn" href="{weixin::U('Reservation/editDingzhi',array('token'=>$vo['token'],'id'=>$vo['id']))}" title="编辑">编辑</a> 
+								<a class="btn" href="{weixin::U('Reservation/delDingzhi',array('token'=>$vo['token'],'id'=>$vo['id']))}" onclick="return(confirm('确定要删除吗？'))"  title="删除">删除</a></td>
+						</tr>
+						</volist>
+					</tbody>
+            </table>
+           </form> 
+          </div>
+          <div class="cLine">
+            <div class="pageNavigator right">
+                 <div class="pages">{weixin:$page}</div>
+            </div>
+            <div class="clr"></div>
+          </div>
+        </div>  
+<include file="Public:footer"/>

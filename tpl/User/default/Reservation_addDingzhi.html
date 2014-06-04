@@ -1,0 +1,89 @@
+<include file="Public:head"/>
+<link rel="stylesheet" type="text/css" href="{weixin::STATICS}/default_user_com.css" media="all">
+<script src="./tpl/User/default/common/js/date/WdatePicker.js"></script>
+<script src="/tpl/static/artDialog/jquery.artDialog.js?skin=default"></script>
+<script src="/tpl/static/artDialog/plugins/iframeTools.js"></script>
+
+
+      <link rel="stylesheet" type="text/css" media="all" href="{weixin::STATICS}/daterangepicker/daterangepicker-bs3.css" />
+   
+      <script type="text/javascript" src="{weixin::STATICS}/daterangepicker/moment.js"></script>
+      <script type="text/javascript" src="{weixin::STATICS}/daterangepicker/daterangepicker.js"></script>
+
+
+ <div class="content" style="width:920px; background:none; margin-left:275px; border:none; margin-bottom:30px;" >
+
+<div class="cLineB">
+  <h4>定制开发设置 </h4><a href="javascript:history.go(-1);return false;" class="right btnGrayS vm" style="margin-top:-27px">返回</a>
+</div>
+<div class="msgWrap bgfc">
+  <form action="" method="post" class="form-horizontal form-validate" novalidate="novalidate">
+    <input type="hidden" name="rid" id="rid" value="123"/>
+    <div class="control-group">
+        <label for="title" class="control-label">标题：</label>
+        <div class="controls">
+           <input type="text" placeholder="请输入标题" name="title" id="title" class="span4"  value="{weixin:$reslist['title']}" data-rule-required="true" /><span class="maroon">*</span><span class="help-inline">尽量简单，不要超过20字</span>
+        </div>
+    </div>
+    <div class="control-group">
+        <label for="keyword" class="control-label">触发关键词：</label>
+        <div class="controls">
+            <input type="text" name="keyword" id="keyword" class="span4" data-rule-required="true" value="{weixin:$reslist['keyword']}"><span class="maroon">*</span><span class="help-inline">只能设置一个关键字</span>
+        </div>
+    </div>
+  
+    <div class="control-group">
+        <label for="coverurl" class="control-label">图文封面：</label>
+        <div class="controls">
+        <img class="thumb_img" id="picurl_src" src="{weixin:$reslist['picurl']|default='./tpl/static/vhouse/zaixianyuyue.jpg'}" style="max-height:100px;" />
+        <input id="picurl" type="text" class="span4" name="picurl" class="input-xlarge"  data-rule-required="true" data-rule-url="true" value="{weixin:$reslist['picurl']|default='./tpl/static/vhouse/zaixianyuyue.jpg'}" />
+          <span class="help-inline">
+               <script src="{weixin::STATICS}/upyun.js"></script><a href="###" onclick="upyunPicUpload('picurl',720,400,'{weixin:$token}')" class="a_upload">上传</a> <a href="###" onclick="viewImg('picurl')">预览</a>
+              <span class="help-inline">建议尺寸：宽720像素，高400像素</span>
+          </span>
+       </div>
+    </div>
+     
+    <div class="control-group">
+         <label for="estate_desc" class="control-label">热线电话：</label>
+         <div class="controls">
+             <input type="text" name="tel" id="tel" class="span4" value="{weixin:$reslist['tel']}"  data-rule-required="true"  placeholder="请输入接收定制开发的电话号码"/><span class="maroon">*</span><span class="help-inline">如010-65371998</span>
+         </div>
+     </div>
+    <div class="control-group">
+         <label for="estate_desc" class="control-label">邮箱：</label>
+         <div class="controls">
+             <input type="text" name="email" id="email" class="span4" value="{weixin:$reslist['email']}"  data-rule-required="true"  placeholder="请输入接收定制开发的邮箱"/>
+         </div>
+     </div>
+     <div class="control-group">
+         <label for="estate_desc" class="control-label">地址：</label>
+         <div class="controls">
+             <input type="text" name="address" id="address" class="span4" value="{weixin:$reslist['address']}"  data-rule-required="true"  placeholder="请输入定制开发的公司地址"/>
+         </div>
+     </div>
+
+     <div class="control-group">
+         <label for="project_brief" class="control-label">定制页头部图片：</label>
+         <div class="controls">
+             <img class="thumb_img" id="headpic_src" src="{weixin:$reslist['headpic']|default='./tpl/static/vhouse/zaixianyuyue.jpg'}" style="max-height: 100px;">
+              <input id="headpic"type="text"class="input-large" name="headpic" class="span4 px"  data-rule-required="true" data-rule-url="true" value="{weixin:$reslist['headpic']|default='./tpl/static/vhouse/zaixianyuyue.jpg'}" />
+            <span class="maroon">*</span>
+            <span class="help-inline">
+            <a href="###" onclick="upyunPicUpload('headpic',720,400,'{weixin:$token}')" class="a_upload">上传</a> <a href="###" onclick="viewImg('headpic')">预览</a>
+         </div>
+     </div>
+     <div class="control-group">
+        <label for="traffic_desc" class="control-label">定制开发的描述：</label>
+        <div class="controls">
+          <textarea class="px" id="info" name="info" style="width:560px;height:75px"  placeholder="显示在图文封面下方，文字请尽量的简洁">{weixin:$reslist['info']}</textarea>
+        </div>
+    </div>
+
+    <div class="form-actions">
+        <button id="bsubmit" type="submit" data-loading-text="提交中..." class="btnGreen">保存</button>　<button type="button" class="btnGray vm">取消</button>
+    </div>
+</form>
+</div> 
+</div>
+<include file="Public:footer"/>
